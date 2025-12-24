@@ -71,3 +71,12 @@ body {
     background-color: #007bff;
     color: white;
     transform: rotateY(180deg);
+
+#answer-image {
+    max-width: 100%;      /* Make sure it fits the width */
+    max-height: 150px;    /* Limit the height so text is still visible */
+    margin-top: 15px;     /* Add some space between text and image */
+    border-radius: 5px;   /* Round the corners slightly */
+    border: 2px solid white; /* A nice border to make it pop */
+    display: none;        /* Hidden by default, JS will show it */
+}
