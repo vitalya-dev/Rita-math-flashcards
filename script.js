@@ -4,6 +4,7 @@ let currentCardIndex = 0;
 // Get references to the HTML elements we need to manipulate
 const questionText = document.getElementById('question-text');
 const answerText = document.getElementById('answer-text');
+const answerImage = document.getElementById('answer-image'); // <--- New reference
 const counterText = document.getElementById('counter');
 const cardElement = document.getElementById('flashcard');
 
@@ -16,10 +17,19 @@ function updateCard() {
     questionText.textContent = card.question;
     answerText.textContent = card.answer;
 
-    // 3. Update the counter (e.g., "1 / 67")
+    // 3. Check if there is an image
+    if (card.image) {
+        answerImage.src = card.image;       // Set the image source
+        answerImage.style.display = 'block'; // Make it visible
+    } else {
+        answerImage.style.display = 'none';  // Hide it if no image exists
+        answerImage.src = '';                // Clear source
+    }
+
+    // 4. Update the counter
     counterText.textContent = `${currentCardIndex + 1} / ${flashcardData.length}`;
 
-    // 4. Ensure the card is showing the front (remove flip class)
+    // 5. Ensure the card is showing the front (remove flip class)
     cardElement.classList.remove('is-flipped');
 }
 
@@ -30,22 +40,20 @@ function flipCard() {
 
 // Function to go to the next card
 function nextCard() {
-    // Increment index. If we are at the end, loop back to 0.
     if (currentCardIndex < flashcardData.length - 1) {
         currentCardIndex++;
     } else {
-        currentCardIndex = 0; // Loop back to start
+        currentCardIndex = 0;
     }
     updateCard();
 }
 
 // Function to go to the previous card
 function prevCard() {
-    // Decrement index. If we are at 0, loop to the last card.
     if (currentCardIndex > 0) {
         currentCardIndex--;
     } else {
-        currentCardIndex = flashcardData.length - 1; // Loop to end
+        currentCardIndex = flashcardData.length - 1;
     }
     updateCard();
 }
