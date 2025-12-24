@@ -1,11 +1,16 @@
 body {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    background-color: #f0f2f5;
+    background-color: #7f8fa6; /* CHANGED: Dark Blue-Grey color */
     display: flex;
     justify-content: center;
     align-items: center;
     height: 100vh;
     margin: 0;
+}
+
+/* Make the title and counter text white so they show up on the dark background */
+h1, #counter {
+    color: #ffffff;
 }
 
 .container {
@@ -34,7 +39,7 @@ body {
     transition: transform 0.6s;
     transform-style: preserve-3d;
     cursor: pointer;
-    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+    box-shadow: 0 10px 20px rgba(0,0,0,0.3);
     border-radius: 10px;
 }
 
