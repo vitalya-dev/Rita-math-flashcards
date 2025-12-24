@@ -12,6 +12,8 @@ body {
     text-align: center;
     width: 100%;
     max-width: 600px;
+    padding: 20px; /* <--- ДОБАВЛЕНО: Отступы от краев экрана */
+    box-sizing: border-box; /* <--- ВАЖНО: Чтобы отступы не увеличивали ширину контейнера */
 }
 
 /* The "Scene" holds the 3D space */
