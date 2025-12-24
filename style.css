@@ -79,4 +79,5 @@ body {
     border-radius: 5px;   /* Round the corners slightly */
     border: 2px solid white; /* A nice border to make it pop */
     display: none;        /* Hidden by default, JS will show it */
+    margin-bottom: 15px;
 }
