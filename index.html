@@ -3,30 +3,30 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Math Flashcards</title>
+    <title>Математические карточки</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
     <div class="container">
-        <h1>Flashcard Study</h1>
+        <h1>Учебные карточки</h1>
         
         <div class="card-scene">
             <div class="card" id="flashcard" onclick="flipCard()">
                 <div class="card-face card-front">
-                    <p id="question-text">Loading question...</p>
-                    <span class="hint">(Click to flip)</span>
+                    <p id="question-text">Загрузка вопроса...</p>
+                    <span class="hint">(Нажмите, чтобы перевернуть)</span>
                 </div>
                 <div class="card-face card-back">
-                    <p id="answer-text">Loading answer...</p>
+                    <p id="answer-text">Загрузка ответа...</p>
                 </div>
             </div>
         </div>
 
         <div class="controls">
-            <button onclick="prevCard()">Previous</button>
+            <button onclick="prevCard()">Назад</button>
             <span id="counter">1 / 67</span>
-            <button onclick="nextCard()">Next</button>
+            <button onclick="nextCard()">Вперед</button>
         </div>
     </div>
 
