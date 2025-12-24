@@ -57,6 +57,7 @@ body {
     box-sizing: border-box;
     font-size: 1.2rem;
     line-height: 1.6;
+    overflow-y: auto;
 }
 
 /* Front Face Styles */
