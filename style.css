@@ -1,0 +1,73 @@
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #f0f2f5;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+}
+
+.container {
+    text-align: center;
+    width: 100%;
+    max-width: 600px;
+}
+
+/* The "Scene" holds the 3D space */
+.card-scene {
+    background-color: transparent;
+    width: 100%;
+    height: 300px;
+    perspective: 1000px; /* This gives the 3D depth */
+    margin-bottom: 20px;
+}
+
+/* The Card itself */
+.card {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    transition: transform 0.6s;
+    transform-style: preserve-3d;
+    cursor: pointer;
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+    border-radius: 10px;
+}
+
+/* This class is added by JS to flip the card */
+.card.is-flipped {
+    transform: rotateY(180deg);
+}
+
+/* Common styles for Front and Back */
+.card-face {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    -webkit-backface-visibility: hidden; /* Safari */
+    backface-visibility: hidden;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border-radius: 10px;
+    padding: 20px;
+    box-sizing: border-box;
+    font-size: 1.2rem;
+    line-height: 1.6;
+}
+
+/* Front Face Styles */
+.card-front {
+    background-color: #ffffff;
+    color: #333;
+    border: 2px solid #007bff;
+}
+
+/* Back Face Styles */
+.card-back {
+    background-color: #007bff;
+    color: white;
+    transform: rotateY(180deg);
